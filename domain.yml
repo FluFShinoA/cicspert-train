@@ -2,112 +2,116 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- affirm
-- ask_blis
-- ask_blis_careers
-- ask_blis_curriculum
-- ask_bscs
-- ask_bscs_careers
-- ask_bscs_curriculum
-- ask_bsit
-- ask_bsit_careers
+- ask_tsora_directions
 - ask_bsit_curriculum
-- ask_bsis
-- ask_bsis_careers
-- ask_bsis_curriculum
-- ask_calculate_tuition
+- ask_blis
+- affirm
 - ask_cen_directions
-- ask_current_dean
+- ask_human_assist
+- provide_preferences
+- goodbye
+- ask_bscs_careers
+- ask_gamedev
+- greet
+- ask_neu_address
+- ask_program_recommendation
+- ask_gamedev_curriculum
+- inform_units
+- ask_bsis
+- ask_bsit_careers
+- ask_tuition_fee
+- ask_faculty_emails
+- ask_blis_curriculum
+- ask_blis_careers
+- ask_bscs_curriculum
+- ask_programs_offered_cics
+- ask_digiani_curriculum
+- ask_bscs
+- ask_bsit
+- ask_vis_directions
+- ask_other_options
+- ask_bsis_careers
+- ask_start_of_class
 - ask_digiani
 - ask_digiani_careers
-- ask_digiani_curriculum
-- ask_faculty_emails
-- ask_faculty_options
-- ask_gamedev
+- ask_calculate_tuition
+- ask_current_dean
+- ask_bsis_curriculum
 - ask_gamedev_careers
-- ask_gamedev_curriculum
-- ask_human_assist
-- ask_neu_address
-- ask_neu_official_sites
-- ask_non_inc_can_enroll
-- ask_other_options
-- ask_program_recommendation
-- ask_programs_offered_cics
-- ask_start_of_class
-- ask_tuition_fee
-- ask_tsora_directions
-- ask_vis_directions
-- deny
-- goodbye
-- greet
-- inform_units
 - neu_socials
-- provide_preferences
+- ask_neu_official_sites
+- ask_faculty_options
 - thank
+- deny
+- ask_entry_grade
+- nlu_fallback
 entities:
 - number_of_units
 - preferences
 slots:
+  requested_slot:
+    type: unfeaturized
+    influence_conversation: false
   preference1:
     influence_conversation: true
     type: text
     mappings:
-    - type: from_entity
-      entity: preferences
+      - type: from_entity
+        entity: preferences
   preference2:
     influence_conversation: true
     type: text
     mappings:
-    - type: from_entity
-      entity: preferences
+      - type: from_entity
+        entity: preferences
   preference3:
     influence_conversation: true
     type: text
     mappings:
-    - type: from_entity
-      entity: preferences
+      - type: from_entity
+        entity: preferences
   preference4:
     influence_conversation: true
     type: text
     mappings:
-    - type: from_entity
-      entity: preferences
+      - type: from_entity
+        entity: preferences
   preference5:
     influence_conversation: true
     type: text
     mappings:
-    - type: from_entity
-      entity: preferences
+      - type: from_entity
+        entity: preferences
   preference6:
     influence_conversation: true
     type: text
     mappings:
-    - type: from_entity
-      entity: preferences
+      - type: from_entity
+        entity: preferences
   preference7:
     influence_conversation: true
     type: text
     mappings:
-    - type: from_entity
-      entity: preferences
+      - type: from_entity
+        entity: preferences
   preference8:
     influence_conversation: true
     type: text
     mappings:
-    - type: from_entity
-      entity: preferences
+      - type: from_entity
+        entity: preferences
   preference9:
     influence_conversation: true
     type: text
     mappings:
-    - type: from_entity
-      entity: preferences
+      - type: from_entity
+        entity: preferences
   preference10:
     influence_conversation: true
     type: text
     mappings:
-    - type: from_entity
-      entity: preferences
+      - type: from_entity
+        entity: preferences
   preference11:
     influence_conversation: true
     type: text
@@ -118,550 +122,411 @@ slots:
     influence_conversation: true
     type: text
     mappings:
-    - type: from_entity
-      entity: number_of_units
+      - type: from_entity
+        entity: number_of_units
 responses:
   utter_tuition_path_options:
-    - text: What else would you like to know
-      buttons:
-        - title: Calculate
-          payload: /ask_calculate_tuition
-        - title: Scholarships
-          payload: /ask_scholarship_links
-        - title: Payment Process
-          payload: /ask_payment_process
+  - buttons:
+    - payload: /ask_calculate_tuition
+      title: Calculate
+    - payload: /ask_scholarship_links
+      title: Scholarships
+    - payload: /ask_payment_process
+      title: Payment Process
+    text: What else would you like to know
   utter_ask_how_many_units:
-    - text: How many units are you planning to take?
+  - text: How many units are you planning to take?
   utter_payment_process:
-    - text: >
-        For Payment Procedures:
-
-
-        - Proceed to https://payment.neu.edu.ph for payment instructions.
-
-        - The PROOF OF PAYMENT must be submitted WITHIN 24 HOURS from the time
-        Online Advising/Reservation was done.
+  - text: "For Payment Procedures:\n\n- Proceed to https://payment.neu.edu.ph for\
+      \ payment instructions.\n- The PROOF OF PAYMENT must be submitted WITHIN 24\
+      \ HOURS from the time Online Advising/Reservation was done."
   utter_confirm_career_assist:
-    - text: >-
-        I see then, would you mind if I ask you a series of questions to better
-        understand your interests?
+  - text: I see then, would you mind if I ask you a series of questions to better
+      understand your interests?
   utter_confirmed_career_assist:
-    - text: >-
-        Alright, I'll start by asking you a series of questions to determine
-        which degree program will be suitable for you based on your preferences!
+  - text: Alright, I will start by asking you 11 questions to determine which degree
+      program will be suitable for you based on your preferences!
   utter_ask_preference1:
-    - text: >-
-        Let's start with finding out what you like. How would you prefer working
-        in the creative side of tech?
-      buttons:
-        - title: A. I would love to
-          payload: '/provide_preferences{{"preferences":"A"}}'
-        - title: B. Sure
-          payload: '/provide_preferences{{"preferences":"B"}}'
-        - title: C. Maybe
-          payload: '/provide_preferences{{"preferences":"C"}}'
-        - title: D. I don't want to
-          payload: '/provide_preferences{{"preferences":"D"}}'
-        - title: Skip
-          payload: /deny
+  - buttons:
+    - payload: /provide_preferences{{"preferences":"A"}}
+      title: A. I would love to
+    - payload: /provide_preferences{{"preferences":"B"}}
+      title: B. Sure
+    - payload: /provide_preferences{{"preferences":"C"}}
+      title: C. Maybe
+    - payload: /provide_preferences{{"preferences":"D"}}
+      title: D. I don't want to
+    - payload: /deny
+      title: Skip
+    text: Let us start with finding out what you like. How would you prefer working
+      in the creative side of tech?
   utter_ask_preference2:
-    - text: How about  the traditional side of the tech industry?
-      buttons:
-        - title: A. I would love to
-          payload: '/provide_preferences{{"preferences":"A"}}'
-        - title: B. Sure
-          payload: '/provide_preferences{{"preferences":"B"}}'
-        - title: C. Maybe
-          payload: '/provide_preferences{{"preferences":"C"}}'
-        - title: D. I don't want to
-          payload: '/provide_preferences{{"preferences":"D"}}'
-        - title: Skip
-          payload: /deny
+  - buttons:
+    - payload: /provide_preferences{{"preferences":"A"}}
+      title: A. I would love to
+    - payload: /provide_preferences{{"preferences":"B"}}
+      title: B. Sure
+    - payload: /provide_preferences{{"preferences":"C"}}
+      title: C. Maybe
+    - payload: /provide_preferences{{"preferences":"D"}}
+      title: D. I don't want to
+    - payload: /deny
+      title: Skip
+    text: How about  the traditional side of the tech industry?
   utter_ask_preference3:
-    - text: Which of the fields below would you want to study the most?
-      buttons:
-        - title: 'A. Web Development, Networking, Tech Support'
-          payload: '/provide_preferences{{"preferences":"A"}}'
-        - title: 'B. Scientific Computing, Machine Learning, Computer Programming'
-          payload: '/provide_preferences{{"preferences":"B"}}'
-        - title: 'C. Information Systems, Project Management, Database Management'
-          payload: '/provide_preferences{{"preferences":"C"}}'
-        - title: 'D. Library Systems, Archiving, Indexing'
-          payload: '/provide_preferences{{"preferences":"D"}}'
-        - title: 'E. Game Design, Game Art, Narrative Design'
-          payload: '/provide_preferences{{"preferences":"E"}}'
-        - title: 'F. Animation, Video Editing, Motion Effects, 3d Modelling'
-          payload: '/provide_preferences{{"preferences":"F"}}'
-        - title: Skip
-          payload: /deny
+  - buttons:
+    - payload: /provide_preferences{{"preferences":"A"}}
+      title: A. Web Development, Networking, Tech Support
+    - payload: /provide_preferences{{"preferences":"B"}}
+      title: B. Scientific Computing, Machine Learning, Computer Programming
+    - payload: /provide_preferences{{"preferences":"C"}}
+      title: C. Information Systems, Project Management, Database Management
+    - payload: /provide_preferences{{"preferences":"D"}}
+      title: D. Library Systems, Archiving, Indexing
+    - payload: /provide_preferences{{"preferences":"E"}}
+      title: E. Game Design, Game Art, Narrative Design
+    - payload: /provide_preferences{{"preferences":"F"}}
+      title: F. Animation, Video Editing, Motion Effects, 3d Modelling
+    - payload: /deny
+      title: Skip
+    text: Which of the fields below would you want to study the most?
   utter_ask_preference4:
-    - text: >-
-        Now for your skills. How confident are you with your knowledge of
-        Internet technologies and hardware/software troubleshooting?
-      buttons:
-        - title: A. Very Confident
-          payload: '/provide_preferences{{"preferences":"A"}}'
-        - title: B. Confident
-          payload: '/provide_preferences{{"preferences":"B"}}'
-        - title: C. A Little Confident
-          payload: '/provide_preferences{{"preferences":"C"}}'
-        - title: D. Not Confident
-          payload: '/provide_preferences{{"preferences":"D"}}'
-        - title: Skip
-          payload: /deny
+  - buttons:
+    - payload: /provide_preferences{{"preferences":"A"}}
+      title: A. Very Confident
+    - payload: /provide_preferences{{"preferences":"B"}}
+      title: B. Confident
+    - payload: /provide_preferences{{"preferences":"C"}}
+      title: C. A Little Confident
+    - payload: /provide_preferences{{"preferences":"D"}}
+      title: D. Not Confident
+    - payload: /deny
+      title: Skip
+    text: Now for your skills. How confident are you with your knowledge of Internet
+      technologies and hardware/software troubleshooting?
   utter_ask_preference5:
-    - text: 'How about with using algorithms, programming languages and mathematics?'
-      buttons:
-        - title: A. Very Confident
-          payload: '/provide_preferences{{"preferences":"A"}}'
-        - title: B. Confident
-          payload: '/provide_preferences{{"preferences":"B"}}'
-        - title: C. A Little Confident
-          payload: '/provide_preferences{{"preferences":"C"}}'
-        - title: D. Not Confident
-          payload: '/provide_preferences{{"preferences":"D"}}'
-        - title: Skip
-          payload: /deny
+  - buttons:
+    - payload: /provide_preferences{{"preferences":"A"}}
+      title: A. Very Confident
+    - payload: /provide_preferences{{"preferences":"B"}}
+      title: B. Confident
+    - payload: /provide_preferences{{"preferences":"C"}}
+      title: C. A Little Confident
+    - payload: /provide_preferences{{"preferences":"D"}}
+      title: D. Not Confident
+    - payload: /deny
+      title: Skip
+    text: How about with using algorithms, programming languages and mathematics?
   utter_ask_preference6:
-    - text: How about with business processes and team management?
-      buttons:
-        - title: A. Very Confident
-          payload: '/provide_preferences{{"preferences":"A"}}'
-        - title: B. Confident
-          payload: '/provide_preferences{{"preferences":"B"}}'
-        - title: C. A Little Confident
-          payload: '/provide_preferences{{"preferences":"C"}}'
-        - title: D. Not Confident
-          payload: '/provide_preferences{{"preferences":"D"}}'
-        - title: Skip
-          payload: /deny
+  - buttons:
+    - payload: /provide_preferences{{"preferences":"A"}}
+      title: A. Very Confident
+    - payload: /provide_preferences{{"preferences":"B"}}
+      title: B. Confident
+    - payload: /provide_preferences{{"preferences":"C"}}
+      title: C. A Little Confident
+    - payload: /provide_preferences{{"preferences":"D"}}
+      title: D. Not Confident
+    - payload: /deny
+      title: Skip
+    text: How about with business processes and team management?
   utter_ask_preference7:
-    - text: How about library systems and organizing techniques?
-      buttons:
-        - title: A. Very Confident
-          payload: '/provide_preferences{{"preferences":"A"}}'
-        - title: B. Confident
-          payload: '/provide_preferences{{"preferences":"B"}}'
-        - title: C. A Little Confident
-          payload: '/provide_preferences{{"preferences":"C"}}'
-        - title: D. Not Confident
-          payload: '/provide_preferences{{"preferences":"D"}}'
-        - title: Skip
-          payload: /deny
+  - buttons:
+    - payload: /provide_preferences{{"preferences":"A"}}
+      title: A. Very Confident
+    - payload: /provide_preferences{{"preferences":"B"}}
+      title: B. Confident
+    - payload: /provide_preferences{{"preferences":"C"}}
+      title: C. A Little Confident
+    - payload: /provide_preferences{{"preferences":"D"}}
+      title: D. Not Confident
+    - payload: /deny
+      title: Skip
+    text: How about library systems and organizing techniques?
   utter_ask_preference8:
-    - text: >-
-        How about with using Game Engines (Unreal, Unity, Godot), and game
-        programming languages (C#,C++,Java) ?
-      buttons:
-        - title: A. Very Confident
-          payload: '/provide_preferences{{"preferences":"A"}}'
-        - title: B. Confident
-          payload: '/provide_preferences{{"preferences":"B"}}'
-        - title: C. A Little Confident
-          payload: '/provide_preferences{{"preferences":"C"}}'
-        - title: D. Not Confident
-          payload: '/provide_preferences{{"preferences":"D"}}'
-        - title: Skip
-          payload: /deny
+  - buttons:
+    - payload: /provide_preferences{{"preferences":"A"}}
+      title: A. Very Confident
+    - payload: /provide_preferences{{"preferences":"B"}}
+      title: B. Confident
+    - payload: /provide_preferences{{"preferences":"C"}}
+      title: C. A Little Confident
+    - payload: /provide_preferences{{"preferences":"D"}}
+      title: D. Not Confident
+    - payload: /deny
+      title: Skip
+    text: How about with using Game Engines (Unreal, Unity, Godot), and game programming
+      languages (C#,C++,Java) ?
   utter_ask_preference9:
-    - text: 'How about tools like Adobe Photoshop, Animate, and Prisma3d'
-      buttons:
-        - title: A. Very Confident
-          payload: '/provide_preferences{{"preferences":"A"}}'
-        - title: B. Confident
-          payload: '/provide_preferences{{"preferences":"B"}}'
-        - title: C. A Little Confident
-          payload: '/provide_preferences{{"preferences":"C"}}'
-        - title: D. Not Confident
-          payload: '/provide_preferences{{"preferences":"D"}}'
-        - title: Skip
-          payload: /deny
+  - buttons:
+    - payload: /provide_preferences{{"preferences":"A"}}
+      title: A. Very Confident
+    - payload: /provide_preferences{{"preferences":"B"}}
+      title: B. Confident
+    - payload: /provide_preferences{{"preferences":"C"}}
+      title: C. A Little Confident
+    - payload: /provide_preferences{{"preferences":"D"}}
+      title: D. Not Confident
+    - payload: /deny
+      title: Skip
+    text: How about tools like Adobe Photoshop, Animate, and Prisma3d
   utter_ask_preference10:
-    - text: >-
-        Now for prior experience. Which of these do you have the most experience
-        in?
-      buttons:
-        - title: A. Helpdesk Jobs/ Customer Support
-          payload: '/provide_preferences{{"preferences":"A"}}'
-        - title: B. Game Testing
-          payload: '/provide_preferences{{"preferences":"B"}}'
-        - title: C. Library
-          payload: '/provide_preferences{{"preferences":"C"}}'
-        - title: D. Art Commissions
-          payload: '/provide_preferences{{"preferences":"D"}}'
-        - title: Skip
-          payload: /deny
+  - buttons:
+    - payload: /provide_preferences{{"preferences":"A"}}
+      title: A. Helpdesk Jobs/ Customer Support
+    - payload: /provide_preferences{{"preferences":"B"}}
+      title: B. Game Testing
+    - payload: /provide_preferences{{"preferences":"C"}}
+      title: C. Library
+    - payload: /provide_preferences{{"preferences":"D"}}
+      title: D. Art Commissions
+    - payload: /deny
+      title: Skip
+    text: Now for prior experience. Which of these do you have the most experience
+      in?
   utter_ask_preference11:
-    - text: Which of these projects have you done the most before?
-      buttons:
-        - title: A. Websites/Networks/Apps/Systems
-          payload: '/provide_preferences{{"preferences":"A"}}'
-        - title: B. Games/ Puzzles/ Game mods
-          payload: '/provide_preferences{{"preferences":"B"}}'
-        - title: C. Animations/Art Projects/Video Edits
-          payload: '/provide_preferences{{"preferences":"C"}}'
-        - title: D. Research Papers/ Book Reports
-          payload: '/provide_preferences{{"preferences":"D"}}'
-        - title: Skip
-          payload: /deny
+  - buttons:
+    - payload: /provide_preferences{{"preferences":"A"}}
+      title: A. Websites/ Networks/ Apps/ Systems
+    - payload: /provide_preferences{{"preferences":"B"}}
+      title: B. Games/ Puzzles/ Game mods
+    - payload: /provide_preferences{{"preferences":"C"}}
+      title: C. Animations/Art Projects/Video Edits
+    - payload: /provide_preferences{{"preferences":"D"}}
+      title: D. Research Papers/ Book Reports
+    - payload: /deny
+      title: Skip
+    text: Which of these projects have you done the most before?
   utter_programs_offered:
-    - text: >
-        NEU CICS offers these programs:
-
-
-        - Bachelor of Library Information Science (Available in: Main Campus)
-
-        - Bachelor of Science in Information Technology (Available in: Main
-        Campus)
-
-        - Bachelor of Science in Information Systems (Available in: Main &
-        Pampanga Campuses)
-
-        - Bachelor of Science In Entertainment and Multimedia Computing Major in
-        Digital Animation (Available in: Main Campus)
-
-        - Bachelor of Science In Entertainment and Multimedia Computing Major in
-        Game Development (Available in: Main Campus)
-
-        - Bachelor of Science in Computer Science (Available in: Main Campus)
+  - text: "NEU CICS offers these programs:\n\n- Bachelor of Library Information Science\
+      \ (Available in: Main Campus)\n- Bachelor of Science in Information Technology\
+      \ (Available in: Main Campus)\n- Bachelor of Science in Information Systems\
+      \ (Available in: Main & Pampanga Campuses)\n- Bachelor of Science In Entertainment\
+      \ and Multimedia Computing Major in Digital Animation (Available in: Main Campus)\n\
+      - Bachelor of Science In Entertainment and Multimedia Computing Major in Game\
+      \ Development (Available in: Main Campus)\n- Bachelor of Science in Computer\
+      \ Science (Available in: Main Campus)"
   utter_programs_offered_buttons:
-    - text: Would you like to know more about these Degree Programs?
-      buttons:
-        - title: Bachelor of Science in Information Technology
-          payload: /ask_bsit
-        - title: Bachelor of Science in Computer Science
-          payload: /ask_bscs
-        - title: Bachelor of Science in Information Systems
-          payload: /ask_bsis
-        - title: Bachelor of Library and Information Science
-          payload: /ask_blis
-        - title: BSEMC Major in Game Development
-          payload: /ask_gamedev
-        - title: BSEMC Major in Digital Animation
-          payload: /ask_digiani
+  - buttons:
+    - payload: /ask_bsit
+      title: Bachelor of Science in Information Technology
+    - payload: /ask_bscs
+      title: Bachelor of Science in Computer Science
+    - payload: /ask_bsis
+      title: Bachelor of Science in Information Systems
+    - payload: /ask_blis
+      title: Bachelor of Library and Information Science
+    - payload: /ask_gamedev
+      title: BSEMC Major in Game Development
+    - payload: /ask_digiani
+      title: BSEMC Major in Digital Animation
+    text: Would you like to know more about these Degree Programs?
   utter_bsit_curriculum:
-    - text: |
-        Here is the pdf file for BSIT curriculum [BSIT](BSIT_CURR.pdf)
+  - text: Here is the pdf file for BSIT curriculum [BSIT](https://drive.google.com/uc?export=download&id=1iFu6SSDnvQNPfLAqe0jUGZT1QE_pZ0Cz)
   utter_bscs_curriculum:
-    - text: |
-        Here is the pdf file for bscs curriculum [BSCS](bscs_CURR.pdf)
+  - text: Here is the pdf file for BSCS curriculum [BSCS](https://drive.google.com/file/d/1MMsKlQuvfLlWrPd0ME_SJDf8WRwuJtLE/view?usp=drive_link)
   utter_bsis_curriculum:
-    - text: |
-        Here is the pdf file for bsis curriculum [BSIS](bsis_CURR.pdf)
+  - text: Here is the pdf file for BSIS curriculum [BSIS](https://drive.google.com/uc?export=download&id=1trNe1biNGhM9jOWMOr7cTEHRW-vAngni)
   utter_blis_curriculum:
-    - text: |
-        Here is the pdf file for blis curriculum [BLIS](blis_CURR.pdf)
+  - text: Here is the pdf file for BLIS curriculum [BLIS](https://drive.google.com/uc?export=download&id=1IsExiZH5HSQ5LJJBBVg08gqD4ha9q0Ce)
   utter_digiani_curriculum:
-    - text: |
-        Here is the pdf file for digiani curriculum [DIGIANI](digiani_CURR.pdf)
+  - text: Here is the pdf file for BSEMC Digital Animation curriculum [DIGIANI](https://drive.google.com/uc?export=download&id=18F9261fhDCYwe9ghU4BTTYg_cd-grZKB)
   utter_gamedev_curriculum:
-    - text: |
-        Here is the pdf file for gamedev curriculum [GAMEDEV](gamedev_CURR.pdf)
+  - text: Here is the pdf file for BSEMC Game Development curriculum [GAMEDEV](https://drive.google.com/uc?export=download&id=1tJ97UuRw4LY2d4UFj3I6I5_yJ7DY9qAG)
   utter_bsit_answer:
-    - text: >-
-        The BS Information Technology program includes the study of the
-        utilization of both hardware and software technologies involving
-        planning, installing, customizing, operating, managing and administering
-        and mainaining information technology infrastructure that provides
-        computing solutions to address the needs of an organization.
-      buttons:
-        - title: BSIT Careers
-          payload: /ask_bsit_careers
-        - title: BSIT Curriculum
-          payload: /ask_bsit_curriculum
+  - buttons:
+    - payload: /ask_bsit_careers
+      title: BSIT Careers
+    - payload: /ask_bsit_curriculum
+      title: BSIT Curriculum
+    text: The BS Information Technology program includes the study of the utilization
+      of both hardware and software technologies involving planning, installing, customizing,
+      operating, managing and administering and mainaining information technology
+      infrastructure that provides computing solutions to address the needs of an
+      organization.
   utter_bsit_careers:
-    - text: |
-        These are the possible careers for a BS Information Technology graduate:
-
-        - Web and Applications Developer
-        - Junior Database Administrator
-        - Systems Administrator
-        - Network Engineer
-        - Junior Information Security Administrator
-        - Systems Integration Security Administrator
-        - Systems Integration Personnel
-        - IT Audit Assistant
-        - Technical Support Specialist
-        - QA Specialist
-        - Systems Analyst
-        - Computer Programmer
+  - text: "These are the possible careers for a BS Information Technology graduate:\n\
+      \n- Web and Applications Developer\n- Junior Database Administrator\n- Systems\
+      \ Administrator\n- Network Engineer\n- Junior Information Security Administrator\n\
+      - Systems Integration Security Administrator\n- Systems Integration Personnel\n\
+      - IT Audit Assistant\n- Technical Support Specialist\n- QA Specialist\n- Systems\
+      \ Analyst\n- Computer Programmer"
   utter_bscs_answer:
-    - text: >-
-        The BS Computer Science program includes the study of computing concepts
-        and theories, algorithmic foundations and new developments in computing.
-        The program prepares students to design and create algorithmically
-        complex software and develop new and effective algorithms for solving
-        computing problems.
-      buttons:
-        - title: BSCS Careers
-          payload: /ask_bscs_careers
-        - title: BSCS Curriculum
-          payload: /ask_bscs_curriculum
+  - buttons:
+    - payload: /ask_bscs_careers
+      title: BSCS Careers
+    - payload: /ask_bscs_curriculum
+      title: BSCS Curriculum
+    text: The BS Computer Science program includes the study of computing concepts
+      and theories, algorithmic foundations and new developments in computing. The
+      program prepares students to design and create algorithmically complex software
+      and develop new and effective algorithms for solving computing problems.
   utter_bscs_careers:
-    - text: |
-        These are the possible careers for a BS Computer Science graduate:
-
-        - Software Engineer
-        - Systems Software Developer
-        - Research and Development computing professional
-        - Applications Software Developer
-        - Computer Programmer
-        - Systems Analyst
-        - Data Analyst
-        - Quality Assurance Specialist
-        - Software Support Specialist
+  - text: "These are the possible careers for a BS Computer Science graduate:\n\n\
+      - Software Engineer\n- Systems Software Developer\n- Research and Development\
+      \ computing professional\n- Applications Software Developer\n- Computer Programmer\n\
+      - Systems Analyst\n- Data Analyst\n- Quality Assurance Specialist\n- Software\
+      \ Support Specialist"
   utter_bsis_answer:
-    - text: >-
-        The BS Information Systems program includes the study of application and
-        effect of information technology to organizations. Graduates of the
-        program should be able to implement an information system, which
-        considers complex technological and organizational factors affecting it.
-        These include components, tools, techniques, stategies, methodologies,
-        etc.
-      buttons:
-        - title: BSIS Careers
-          payload: /ask_bsis_careers
-        - title: BSIS Curriculum
-          payload: /ask_bsis_curriculum
+  - buttons:
+    - payload: /ask_bsis_careers
+      title: BSIS Careers
+    - payload: /ask_bsis_curriculum
+      title: BSIS Curriculum
+    text: The BS Information Systems program includes the study of application and
+      effect of information technology to organizations. Graduates of the program
+      should be able to implement an information system, which considers complex technological
+      and organizational factors affecting it. These include components, tools, techniques,
+      stategies, methodologies, etc.
   utter_bsis_careers:
-    - text: |
-        These are the possible careers for a BS Information Systems graduate:
-
-        - Organizational Process Analyst 
-        - Data Analyst
-        - Solutions Specialist
-        - Systems Analyst
-        - IS Project Management Personnel
-        - Applications Developer
-        - End User Trainer
-        - Documentation Specialist
-        - Quality Assurance Specialist
+  - text: "These are the possible careers for a BS Information Systems graduate:\n\
+      \n- Organizational Process Analyst \n- Data Analyst\n- Solutions Specialist\n\
+      - Systems Analyst\n- IS Project Management Personnel\n- Applications Developer\n\
+      - End User Trainer\n- Documentation Specialist\n- Quality Assurance Specialist"
   utter_blis_answer:
-    - text: >-
-        The BLIS Program is the study of the development, deployment, and
-        management of information resources in print, non-print, electronic and
-        digital formats and services. Graduates of this program are being
-        prepared to apply information technology to basic library operations and
-        functions. Moreover, they are trained to harness a range of
-        bibliographical and online tools to support teaching, research, and
-        other services.
-      buttons:
-        - title: BLIS Careers
-          payload: /ask_blis_careers
-        - title: BLIS Curriculum
-          payload: /ask_blis_curriculum
+  - buttons:
+    - payload: /ask_blis_careers
+      title: BLIS Careers
+    - payload: /ask_blis_curriculum
+      title: BLIS Curriculum
+    text: The BLIS Program is the study of the  development, deployment, and management
+      of information resources in print, non-print, electronic and digital formats
+      and services. Graduates of this program are being prepared to apply information
+      technology to basic library operations and functions. Moreover, they are trained
+      to harness a range of bibliographical and online tools to support teaching,
+      research, and other services.
   utter_blis_careers:
-    - text: >-
-        Careers in LibSci include roles such as librarian,archivist, and
-        research specialist. These roles involve work in libraries, archives,
-        museums, universities, and other information institutions.
+  - text: Careers in LibSci include roles such as librarian,archivist, and research
+      specialist. These roles involve work in libraries, archives, museums, universities,
+      and other information institutions.
   utter_gamedev_answer:
-    - text: >-
-        The BSEMC Major in Game Development is the study and application of
-        fundamental and advanced theories in game design, scientific
-        simulations, use and development of gaming technology and tools, and
-        production of commercially acceptable digital games and viable solutions
-        for use in entertainement and scientific applications.
-      buttons:
-        - title: GameDev Careers
-          payload: /ask_gamedev_careers
-        - title: GameDev Curriculum
-          payload: /ask_gamedev_curriculum
+  - buttons:
+    - payload: /ask_gamedev_careers
+      title: GameDev Careers
+    - payload: /ask_gamedev_curriculum
+      title: GameDev Curriculum
+    text: The BSEMC Major in Game Development is the study and application of fundamental
+      and advanced theories in game design, scientific simulations, use and development
+      of gaming technology and tools, and production of commercially acceptable digital
+      games and viable solutions for use in entertainement and scientific applications.
   utter_gamedev_careers:
-    - text: >
-        These are possible careers for a BSEMC Major in Game Development
-        graduate:
-
-        - Game Designer
-
-        - Game Artist
-
-        - Game Programmer
-
-        - Narrative Designer
-
-        - Associate Game Producer
-
-        - Senior Game Sound Engineer
-
-        - Business Development Specialist
-
-        - Associate Business Development Specialist for Entertainment and
-        Multimedia Industries
+  - text: "These are possible careers for a BSEMC Major in Game Development graduate:\n\
+      - Game Designer\n- Game Artist\n- Game Programmer\n- Narrative Designer\n- Associate\
+      \ Game Producer\n- Senior Game Sound Engineer\n- Business Development Specialist\n\
+      - Associate Business Development Specialist for Entertainment and Multimedia\
+      \ Industries"
   utter_digiani_answer:
-    - text: >-
-        The BSEMC Major in Digital Animation is the study and application of
-        fundamental and advanced theories and advanced techniques in 2d and 3d
-        animation, use and development for advancement of animation
-        technologies, and production of commercially acceptable content and
-        viable solutions for different platforms such as broadcast, web and
-        mobile cast.
-      buttons:
-        - title: Digital Animation Careers
-          payload: /ask_digiani_careers
-        - title: Digital Animation Curriculum
-          payload: /ask_digiani_curriculum
+  - buttons:
+    - payload: /ask_digiani_careers
+      title: Digital Animation Careers
+    - payload: /ask_digiani_curriculum
+      title: Digital Animation Curriculum
+    text: The BSEMC Major in Digital Animation is the study and application of fundamental
+      and advanced theories and advanced techniques in 2d and 3d animation, use and
+      development for advancement of animation technologies, and production of commercially
+      acceptable content and viable solutions for different platforms such as broadcast,
+      web and mobile cast.
   utter_digiani_careers:
-    - text: >
-        These are possible careers for a BSEMC Major in Digital Animation
-        graduate:
-
-
-        - Creative Programmer
-
-        - Technical Animator 
-
-        - Creative Content Developer 
-
-        - Ad Builders
-
-        - Technical Director for Modelling/Rigging/Lighting
-
-        - Animation Quality Assurance Specialist
-
-        - Technical Director for Game Art
-
-        - Digital 2D or 3D Animation Content Producer 
-
-        - Digital 2D or 3D Production Designer
-
-        - Associate Business Development Specialist for Entertainment and
-        Multimedia Industries
+  - text: "These are possible careers for a BSEMC Major in Digital Animation graduate:\n\
+      \n- Creative Programmer\n- Technical Animator \n- Creative Content Developer\
+      \ \n- Ad Builders\n- Technical Director for Modelling/Rigging/Lighting\n- Animation\
+      \ Quality Assurance Specialist\n- Technical Director for Game Art\n- Digital\
+      \ 2D or 3D Animation Content Producer \n- Digital 2D or 3D Production Designer\n\
+      - Associate Business Development Specialist for Entertainment and Multimedia\
+      \ Industries"
   utter_greet:
-    - text: Hey! How may I help you?
-      buttons:
-        - title: Degree Programs
-          payload: /ask_programs_offered_cics
-        - title: Admission Requirements/Procedures
-          payload: /admission_process_query
-        - title: Career Assistance
-          payload: /ask_program_recommendation
-        - title: Others
-          payload: /ask_other_options
+  - buttons:
+    - payload: /ask_programs_offered_cics
+      title: Degree Programs
+    - payload: /admission_process_query
+      title: Admission Requirements/Procedures
+    - payload: /ask_program_recommendation
+      title: Career Assistance
+    - payload: /ask_other_options
+      title: Others
+    text: Hey! How may I help you?
   utter_greet2:
-    - text: What more would you like to know?
-      buttons:
-        - title: Degree Programs
-          payload: /ask_programs_offered_cics
-        - title: Admission Requirements/Procedures
-          payload: /admission_process_query
-        - title: Career Assistance
-          payload: /ask_program_recommendation
-        - title: Others
-          payload: /ask_other_options
+  - buttons:
+    - payload: /ask_programs_offered_cics
+      title: Degree Programs
+    - payload: /ask_program_recommendation
+      title: Career Assistance
+    - payload: /ask_other_options
+      title: Others
+    text: What more would you like to know?
   utter_thanks:
-    - text: 'You are welcome, it was my pleasure to assist you.'
+  - text: You are welcome, it was my pleasure to assist you.
   utter_goodbye:
-    - text: 'Goodbye! If you have more questions, feel free to ask.'
+  - text: Goodbye! If you have more questions, feel free to ask.
   utter_please_rephrase:
-    - text: >
-        I apologize as I can't seem to help you with that. If you need help for
-        a specific concern you can reach us out through these:
-
-          - CICS Email: computerstudies@neu.edu.ph
-          - Email: info@neu.edu.ph
-          - Contact No.: (02) 8981 4221
-          - [CICS Department](https://meet.google.com/orf-owbe-gef)
+  - text: "I apologize as I can't seem to help you with that. If you need help for\
+      \ a specific concern you can reach us out through these:\n\n  - CICS Email:\
+      \ computerstudies@neu.edu.ph\n  - Email: info@neu.edu.ph\n  - Contact No.: (02)\
+      \ 8981 4221\n  - [CICS Department](https://meet.google.com/orf-owbe-gef)"
   utter_other_options:
-    - text: Are these your concerns?
-      buttons:
-        - title: Faculty Info
-          payload: /ask_faculty_info
-        - title: NEU Official Sites
-          payload: /ask_neu_official_sites
-        - title: Address
-          payload: /ask_neu_address
-        - title: None
-          payload: /ask_human_assist
+  - buttons:
+    - payload: /ask_faculty_info
+      title: Faculty Info
+    - payload: /ask_neu_official_sites
+      title: NEU Official Sites
+    - payload: /ask_neu_address
+      title: Address
+    - payload: /ask_human_assist
+      title: None
+    text: Are these your concerns?
   utter_faculty_options:
-    - text: What would you like to know about CICS faculty?
-      buttons:
-        - title: Faculty Email
-          payload: /ask_faculty_emails
-        - title: Current Dean
-          payload: /ask_current_dean
+  - buttons:
+    - payload: /ask_faculty_emails
+      title: Faculty Email
+    - payload: /ask_current_dean
+      title: Current Dean
+    text: What would you like to know about CICS faculty?
   utter_faculty_emails:
-    - text: |
-        Here is the file containing all emails of CICS professors
-        [CICS_Emails](emails.xslx)
+  - text: "Here is the file containing all emails of CICS professors\n[CICS_Emails](emails.xslx)"
   utter_current_dean:
-    - text: The current Dean of CICS Department is Dean Audrey Lyle Del Mundo Diego.
+  - text: The current Dean of CICS Department is Dean Audrey Lyle Del Mundo Diego.
   utter_neu_official_sites:
-    - text: >-
-        NEU VLE: https://neuvle.neu.edu.ph/ NEU Automate:
-        https://automate.neu.edu.ph/ NEU Official Page: https://neu.edu.ph
+  - text: 'NEU VLE: https://neuvle.neu.edu.ph/ NEU Automate: https://automate.neu.edu.ph/
+      NEU Official Page: https://neu.edu.ph'
   utter_virtual_office:
-    - text: >
-        If you have more concerns that are in need of human assistance, please
-        visit these virtual offices below:
-
-          - [CICS Department](https://meet.google.com/orf-owbe-gef)
-          - [Computer Services Department](https://meet.google.com/vdy-enbt-xyo)
-          - [Library Department](https://meet.google.com/mxo-kyxn-yxs)
-
-        Or Contact us through these:
-
-          - NEU Email: info@neu.edu.ph
-          - CICS Email: computerstudies@neu.edu.ph
-          - Contact No.: (02) 8981 4221
+  - text: "If you have more concerns that are in need of human assistance, please\
+      \ visit these virtual offices below:\n\n  - [CICS Department](https://meet.google.com/orf-owbe-gef)\n\
+      \  - [Computer Services Department](https://meet.google.com/vdy-enbt-xyo)\n\
+      \  - [Library Department](https://meet.google.com/mxo-kyxn-yxs)\n\nOr Contact\
+      \ us through these:\n\n  - NEU Email: info@neu.edu.ph\n  - CICS Email: computerstudies@neu.edu.ph\n\
+      \  - Contact No.: (02) 8981 4221"
   utter_send_neu_address:
-    - text: >-
-        The address of New Era University is #9 Central Ave, New Era, Quezon
-        City, 1107 Metro Manila Do you want specific directions based on your
-        location?
-      buttons:
-        - title: From Tandang Sora
-          payload: /ask_tsora_directions
-        - title: From Visayas Avenue
-          payload: /ask_vis_directions
-        - title: From Central Avenue
-          payload: /ask_cen_directions
+  - buttons:
+    - payload: /ask_tsora_directions
+      title: From Tandang Sora
+    - payload: /ask_vis_directions
+      title: From Visayas Avenue
+    - payload: /ask_cen_directions
+      title: From Central Avenue
+    text: 'The address of New Era University is #9 Central Ave, New Era, Quezon City,
+      1107 Metro Manila Do you want specific directions based on your location?'
   utter_send_vis_directions:
-    - text: >
-        If from Visayas Avenue, Drop near Shell/Jollibee then ride nearby PINK
-        tricycles to NEU campus.
+  - text: If from Visayas Avenue, Drop near Shell/Jollibee then ride nearby PINK tricycles
+      to NEU campus.
   utter_send_cen_directions:
-    - text: >
-        If from Central Avenue, Drop at Central Toda near Templo Central, Ride
-        Tricycle to NEU campus.
+  - text: If from Central Avenue, Drop at Central Toda near Templo Central, Ride Tricycle
+      to NEU campus.
   utter_send_tsora_directions:
-    - text: >
-        If from Tandang Sora, Drop near Mercury Drug, then go past New Era
-        Elementary school and NEU PSB.
+  - text: If from Tandang Sora, Drop near Mercury Drug, then go past New Era Elementary
+      school and NEU PSB.
   utter_send_non_sectarian:
-    - text: >-
-        New Era University is run by the Iglesia ni Cristo, but it is
-        non-sectarian meaning any religion is welcome to enroll.
+  - text: New Era University is run by the Iglesia ni Cristo, but it is non-sectarian
+      meaning any religion is welcome to enroll.
   utter_send_neu_socials:
-    - text: >
-        If you want to know more about recent events at the New Era University
-        you can visit our socials:
-
-          - [Facebook Fan Page](https://www.facebook.com/Neu.ph.official/)
-          - [Instagram Account](https://instagram.com/newerauniversity_official/)
-          - [Twitter Account](https://twitter.com/NEU_ph_official/)
-
-        Or you can Visit our official page: [NEU Official
-        Page](https://neu.edu.ph)
+  - text: "If you want to know more about recent events at the New Era University\
+      \ you can visit our socials:\n\n  - [Facebook Fan Page](https://www.facebook.com/Neu.ph.official/)\n\
+      \  - [Instagram Account](https://instagram.com/newerauniversity_official/)\n\
+      \  - [Twitter Account](https://twitter.com/NEU_ph_official/)\n\nOr you can Visit\
+      \ our official page: [NEU Official Page](https://neu.edu.ph)"
 actions:
 - action_tuition_fee
 - action_calculate_tuition_fee
-- validate_preference_form
-- action_reset_all_slots
 - action_entry_grade
 - action_start_of_class
-- action_virtual_office
-forms:
-  preference_form:
-    required_slots:
-      - preference1
-      - preference2
-      - preference3
-      - preference4
-      - preference5
-      - preference6
-      - preference7
-      - preference8
-      - preference9
-      - preference10
-      - preference11
+- action_reset_all_slots
+- preference_form

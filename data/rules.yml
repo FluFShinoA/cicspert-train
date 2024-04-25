@@ -1,4 +1,4 @@
-version: "3.1"
+version: "2.0"
 rules:
 - rule: Say goodbye anytime the user says goodbye
   steps:
@@ -8,7 +8,7 @@ rules:
   steps:
   - intent: nlu_fallback
   - action: utter_please_rephrase
-  - rule: Activate preference form
+- rule: Activate preference form
   steps:
   - action: utter_confirm_career_assist
   - intent: affirm
@@ -33,4 +33,4 @@ rules:
   - action: action_deactivate_loop
   - active_loop: null
   - slot_was_set:
-      - requested_slot: null
+    - requested_slot: null

@@ -1,3 +1,4 @@
+version: "2.0"
 nlu:
 - intent: greet
   examples: |
@@ -111,7 +112,7 @@ nlu:
     - visayas to neu
     - visayas to neu campus
     - What to ride to NEU from visayas
-    - visayas 
+    - visayas
     - visayas ave directions
 - intent: ask_cen_directions
   examples: |
@@ -121,7 +122,7 @@ nlu:
     - central to neu
     - central to neu campus
     - What to ride to NEU from central
-    - central 
+    - central
     - central ave directions
 - intent: ask_human_assist
   examples: |
@@ -227,7 +228,6 @@ nlu:
     - BSCS
     - BSCS course
     - CS
-    - BSCS
     - Computer Science
     - cs course
     - Com Sci
@@ -237,7 +237,6 @@ nlu:
     - BSIS
     - BSIS course
     - IS
-    - BSIS
     - Information Systems
     - IS course
     - Info Sys
@@ -247,7 +246,6 @@ nlu:
     - BLIS
     - BLIS course
     - LS
-    - BLIS
     - Lib Sci
     - libsci course
     - Library Science
@@ -258,7 +256,6 @@ nlu:
     - DigiAni course
     - DA
     - BSEMC DA
-    - DigiAni
     - digiani course
     - BSEMC Digital Animation
     - Digi-Ani
@@ -268,7 +265,6 @@ nlu:
     - GameDev course
     - GD
     - BSEMC GD
-    - GameDev
     - gamedev course
     - BSEMC Game Development
     - Game-Dev
@@ -352,7 +348,6 @@ nlu:
     - recommend program
     - recommend degree
     - recommend course
-
 - intent: provide_preferences
   examples: |
     - i choose [A](preferences)
@@ -383,7 +378,7 @@ nlu:
     - I want to take [12](number_of_units) units next semester
     - Considering [20](number_of_units) units for the upcoming term
     - [23](number_of_units) units
-    - [10](number_of_units) 
+    - [10](number_of_units)
     - [11](number_of_units) unit
     - I need [12](number_of_units) unit
 - intent: ask_calculate_tuition

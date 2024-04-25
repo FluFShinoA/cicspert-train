@@ -1,3 +1,4 @@
+version: "2.0"
 stories:
 - story: greet
   steps:
@@ -7,63 +8,62 @@ stories:
   steps:
   - intent: thank
   - action: utter_thanks
-  - story: others
+- story: others
   steps:
-    - intent: ask_other_options
-    - action: utter_other_options
+  - intent: ask_other_options
+  - action: utter_other_options
 - story: NONE
   steps:
-    - intent: ask_human_assist
-    - action: utter_virtual_office
+  - intent: ask_human_assist
+  - action: utter_virtual_office
 - story: FACULTY INFO
   steps:
-    - intent: ask_faculty_options
-    - action: utter_faculty_options
+  - intent: ask_faculty_options
+  - action: utter_faculty_options
 - story: faculty emails
   steps:
-    - intent: ask_faculty_emails
-    - action: utter_faculty_emails
-    - action: utter_greet2
+  - intent: ask_faculty_emails
+  - action: utter_faculty_emails
+  - action: utter_greet2
 - story: current Dean
   steps:
-    - intent: ask_current_dean
-    - action: utter_current_dean
-    - action: utter_greet2
+  - intent: ask_current_dean
+  - action: utter_current_dean
+  - action: utter_greet2
 - story: user asks for neu address
   steps:
-    - intent: ask_neu_address
-    - action: utter_send_neu_address
+  - intent: ask_neu_address
+  - action: utter_send_neu_address
 - story: TSORA -> neu
   steps:
-    - intent: ask_tsora_directions
-    - action: utter_send_tsora_directions
-    - action: utter_greet2
+  - intent: ask_tsora_directions
+  - action: utter_send_tsora_directions
+  - action: utter_greet2
 - story: VIS -> neu
   steps:
-    - intent: ask_vis_directions
-    - action: utter_send_vis_directions
-    - action: utter_greet2
+  - intent: ask_vis_directions
+  - action: utter_send_vis_directions
+  - action: utter_greet2
 - story: CEN -> neu
   steps:
-    - intent: ask_cen_directions
-    - action: utter_send_cen_directions
-    - action: utter_greet2
+  - intent: ask_cen_directions
+  - action: utter_send_cen_directions
+  - action: utter_greet2
 - story: OFFICIAL NEU sites
   steps:
-    - intent: ask_neu_official_sites
-    - action: utter_neu_official_sites
-    - action: utter_greet2
+  - intent: ask_neu_official_sites
+  - action: utter_neu_official_sites
+  - action: utter_greet2
 - story: user asks for neu socials
   steps:
-    - intent: neu_socials
-    - action: utter_send_neu_socials
-    - action: utter_greet2
-
-    - story: User asks about Programs offered by CICS
+  - intent: neu_socials
+  - action: utter_send_neu_socials
+  - action: utter_greet2
+- story: User asks about Programs offered by CICS
   steps:
-    - intent: ask_programs_offered_cics
-    - action: utter_programs_offered
-    - action: utter_programs_offered_buttons
+  - intent: ask_programs_offered_cics
+  - action: utter_programs_offered
+  - action: utter_programs_offered_buttons
 - story: deny career assist
   steps:
   - intent: ask_program_recommendation
@@ -144,23 +144,23 @@ stories:
   - action: utter_greet2
 - story: User calc tuition fee
   steps:
-    - intent: ask_tuition_fee
-    - action: action_tuition_fee
-    - action: utter_tuition_path_options
-    - intent: ask_calculate_tuition
-    - action: utter_ask_how_many_units
-    - intent: inform_units
-      entities: 
-        - number_of_units
-    - action: action_calculate_tuition_fee
-    - action: utter_greet2
+  - intent: ask_tuition_fee
+  - action: action_tuition_fee
+  - action: utter_tuition_path_options
+  - intent: ask_calculate_tuition
+  - action: utter_ask_how_many_units
+  - intent: inform_units
+    entities:
+    - number_of_units: ''
+  - action: action_calculate_tuition_fee
+  - action: utter_greet2
 - story: ask entry grade
   steps:
-    - intent: ask_entry_grade
-    - action: action_entry_grade
-    - action: utter_greet2
+  - intent: ask_entry_grade
+  - action: action_entry_grade
+  - action: utter_greet2
 - story: ask start class
   steps:
-    - intent: ask_start_of_class
-    - action: action_start_of_class
-    - action: utter_greet2
+  - intent: ask_start_of_class
+  - action: action_start_of_class
+  - action: utter_greet2
