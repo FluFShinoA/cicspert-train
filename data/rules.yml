@@ -1,0 +1,36 @@
+version: "3.1"
+rules:
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+  - rule: Activate preference form
+  steps:
+  - action: utter_confirm_career_assist
+  - intent: affirm
+  - action: utter_confirmed_career_assist
+  - action: action_reset_all_slots
+  - action: preference_form
+  - active_loop: preference_form
+- rule: Submit preference form
+  condition:
+  - active_loop: preference_form
+  steps:
+  - action: preference_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_greet2
+- rule: Cancel preference form
+  condition:
+  - active_loop: preference_form
+  steps:
+  - intent: deny
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+      - requested_slot: null

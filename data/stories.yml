@@ -1,0 +1,166 @@
+stories:
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+- story: Express thanks
+  steps:
+  - intent: thank
+  - action: utter_thanks
+  - story: others
+  steps:
+    - intent: ask_other_options
+    - action: utter_other_options
+- story: NONE
+  steps:
+    - intent: ask_human_assist
+    - action: utter_virtual_office
+- story: FACULTY INFO
+  steps:
+    - intent: ask_faculty_options
+    - action: utter_faculty_options
+- story: faculty emails
+  steps:
+    - intent: ask_faculty_emails
+    - action: utter_faculty_emails
+    - action: utter_greet2
+- story: current Dean
+  steps:
+    - intent: ask_current_dean
+    - action: utter_current_dean
+    - action: utter_greet2
+- story: user asks for neu address
+  steps:
+    - intent: ask_neu_address
+    - action: utter_send_neu_address
+- story: TSORA -> neu
+  steps:
+    - intent: ask_tsora_directions
+    - action: utter_send_tsora_directions
+    - action: utter_greet2
+- story: VIS -> neu
+  steps:
+    - intent: ask_vis_directions
+    - action: utter_send_vis_directions
+    - action: utter_greet2
+- story: CEN -> neu
+  steps:
+    - intent: ask_cen_directions
+    - action: utter_send_cen_directions
+    - action: utter_greet2
+- story: OFFICIAL NEU sites
+  steps:
+    - intent: ask_neu_official_sites
+    - action: utter_neu_official_sites
+    - action: utter_greet2
+- story: user asks for neu socials
+  steps:
+    - intent: neu_socials
+    - action: utter_send_neu_socials
+    - action: utter_greet2
+
+    - story: User asks about Programs offered by CICS
+  steps:
+    - intent: ask_programs_offered_cics
+    - action: utter_programs_offered
+    - action: utter_programs_offered_buttons
+- story: deny career assist
+  steps:
+  - intent: ask_program_recommendation
+  - action: utter_confirm_career_assist
+  - intent: deny
+  - action: utter_greet2
+- story: user asks for bsit curricula
+  steps:
+  - intent: ask_bsit
+  - action: utter_bsit_answer
+  - intent: ask_bsit_curriculum
+  - action: utter_bsit_curriculum
+  - action: utter_greet2
+- story: user asks for bscs curricula
+  steps:
+  - intent: ask_bscs
+  - action: utter_bscs_answer
+  - intent: ask_bscs_curriculum
+  - action: utter_bscs_curriculum
+  - action: utter_greet2
+- story: user asks for bsis curricula
+  steps:
+  - intent: ask_bsis
+  - action: utter_bsis_answer
+  - intent: ask_bsis_curriculum
+  - action: utter_bsis_curriculum
+  - action: utter_greet2
+- story: user asks for blis curricula
+  steps:
+  - intent: ask_blis
+  - action: utter_blis_answer
+  - intent: ask_blis_curriculum
+  - action: utter_blis_curriculum
+  - action: utter_greet2
+- story: user asks digital animation curricula
+  steps:
+  - intent: ask_digiani
+  - action: utter_digiani_answer
+  - intent: ask_digiani_curriculum
+  - action: utter_digiani_curriculum
+  - action: utter_greet2
+- story: user asks game development curricula
+  steps:
+  - intent: ask_gamedev
+  - action: utter_gamedev_answer
+  - intent: ask_gamedev_curriculum
+  - action: utter_gamedev_curriculum
+  - action: utter_greet2
+- story: user asks for BSIT careers
+  steps:
+  - intent: ask_bsit_careers
+  - action: utter_bsit_careers
+  - action: utter_greet2
+- story: user asks for BSCS careers
+  steps:
+  - intent: ask_bscs_careers
+  - action: utter_bscs_careers
+  - action: utter_greet2
+- story: user asks for BSIS careers
+  steps:
+  - intent: ask_bsis_careers
+  - action: utter_bsis_careers
+  - action: utter_greet2
+- story: user asks for BLIS careers
+  steps:
+  - intent: ask_blis_careers
+  - action: utter_blis_careers
+  - action: utter_greet2
+- story: user asks for DigiAni careers
+  steps:
+  - intent: ask_digiani_careers
+  - action: utter_digiani_careers
+  - action: utter_greet2
+- story: user asks for Gamedev careers
+  steps:
+  - intent: ask_gamedev_careers
+  - action: utter_gamedev_careers
+  - action: utter_greet2
+- story: User calc tuition fee
+  steps:
+    - intent: ask_tuition_fee
+    - action: action_tuition_fee
+    - action: utter_tuition_path_options
+    - intent: ask_calculate_tuition
+    - action: utter_ask_how_many_units
+    - intent: inform_units
+      entities: 
+        - number_of_units
+    - action: action_calculate_tuition_fee
+    - action: utter_greet2
+- story: ask entry grade
+  steps:
+    - intent: ask_entry_grade
+    - action: action_entry_grade
+    - action: utter_greet2
+- story: ask start class
+  steps:
+    - intent: ask_start_of_class
+    - action: action_start_of_class
+    - action: utter_greet2

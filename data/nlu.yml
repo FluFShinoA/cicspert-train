@@ -1,0 +1,403 @@
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - good afternoon
+    - yo
+    - Ho
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+- intent: thank
+  examples: |
+    - thanks
+    - thank you
+    - appreciate it
+    - many thanks
+    - tnx
+    - ty
+    - tnxs
+- intent: affirm
+  examples: |
+    - I don't mind
+    - sure
+    - Yes
+    - yeah
+    - ok
+    - Y
+    - oks
+    - Yah
+- intent: deny
+  examples: |
+    - No
+    - I'd rather not
+    - Not interested
+    - nope
+    - N
+    - X
+    - not ok
+    - nah
+- intent: ask_other_options
+  examples: |
+    - I have other concerns
+    - I don't see my concern
+    - other concern
+    - other concren
+    - I need help
+    - how contact NEU
+    - need to contact NEU
+- intent: ask_faculty_options
+  examples: |
+    - faculty info
+    - cics faculty
+    - faculty
+    - facluty
+    - teachers
+    - professors
+    - who is faculty
+    - list of faculty
+- intent: ask_faculty_emails
+  examples: |
+    - faculty info emails
+    - cics faculty emails
+    - faculty emails
+    - facluty emails
+    - teachers emails
+    - professors emails
+    - where is faculty emails
+    - list of faculty emails
+- intent: ask_current_dean
+  examples: |
+    - Dean of CICS department
+    - Current Dean
+    - who is dean
+    - dean
+    - curr dean
+    - CS Dean
+- intent: ask_neu_address
+  examples: |
+    - where is NEU
+    - NEU address
+    - how to go NEU
+    - NEU where
+    - NEU location
+    - address
+    - campus location
+    - NEU directions
+- intent: ask_tsora_directions
+  examples: |
+    - Tandang Sora
+    - NEU from Tandang Sora
+    - tsora
+    - tsora to neu
+    - T.Sora to neu campus
+    - What to ride to NEU from tandang sora
+    - tandang soraa
+    - tandang sora directions
+- intent: ask_vis_directions
+  examples: |
+    - Visayas Ave
+    - NEU from Visayas Ave
+    - vis ave
+    - visayas to neu
+    - visayas to neu campus
+    - What to ride to NEU from visayas
+    - visayas 
+    - visayas ave directions
+- intent: ask_cen_directions
+  examples: |
+    - Central Ave
+    - NEU from Central Ave
+    - cen ave
+    - central to neu
+    - central to neu campus
+    - What to ride to NEU from central
+    - central 
+    - central ave directions
+- intent: ask_human_assist
+  examples: |
+    - where to access virtual office
+    - cics virtual office
+    - i have serious concern
+    - virtual office cics
+    - I need professor's assistance
+    - is there someone who i can talk to to solve my issue
+    - contact numbers
+- intent: ask_neu_official_sites
+  examples: |
+    - what are official sites of neu
+    - official sites of neu
+    - where vle
+    - where automate
+    - neu sites
+    - official site
+    - neu website
+    - automate
+- intent: neu_socials
+  examples: |
+    - neu socials
+    - neu social media
+    - neu facebook
+    - neu twitter
+    - neu instagram
+    - neu fb
+    - neu ig
+    - socials
+- intent: ask_bsit_curriculum
+  examples: |
+    - BSIT curriculum
+    - send BSIT curriculum
+    - bsit curiculum
+    - send bsit curriculum
+    - bsit subjects
+    - bsit curriculum subjects
+    - bsit expected subjects
+    - bsit curr
+- intent: ask_bscs_curriculum
+  examples: |
+    - BSCS curriculum
+    - send BSCS curriculum
+    - bscs curiculum
+    - send bscs curriculum
+    - bscs subjects
+    - bscs curriculum subjects
+    - bscs expected subjects
+    - bscs curr
+- intent: ask_bsis_curriculum
+  examples: |
+    - BSIS curriculum
+    - send BSIS curriculum
+    - bsis curiculum
+    - send bsis curriculum
+    - bsis subjects
+    - bsis curriculum subjects
+    - bsis expected subjects
+    - bsis curr
+- intent: ask_blis_curriculum
+  examples: |
+    - BLIS curriculum
+    - send BLIS curriculum
+    - blis curiculum
+    - send blis curriculum
+    - blis subjects
+    - blis curriculum subjects
+    - blis expected subjects
+    - blis curr
+- intent: ask_digiani_curriculum
+  examples: |
+    - DigiAni curriculum
+    - send DigiAni curriculum
+    - digiani curiculum
+    - send digiani curriculum
+    - digiani subjects
+    - digiani curriculum subjects
+    - digiani expected subjects
+    - digiani curr
+- intent: ask_gamedev_curriculum
+  examples: |
+    - GameDev curriculum
+    - send GameDev curriculum
+    - gamedev curiculum
+    - send gamedev curriculum
+    - gamedev subjects
+    - gamedev curriculum subjects
+    - gamedev expected subjects
+    - gamedev curr
+- intent: ask_bsit
+  examples: |
+    - BSIT
+    - BSIT course
+    - IT
+    - bsit
+    - Information Technology
+    - IT course
+    - Info Tech
+    - BS-IT
+- intent: ask_bscs
+  examples: |
+    - BSCS
+    - BSCS course
+    - CS
+    - BSCS
+    - Computer Science
+    - cs course
+    - Com Sci
+    - BS-CS
+- intent: ask_bsis
+  examples: |
+    - BSIS
+    - BSIS course
+    - IS
+    - BSIS
+    - Information Systems
+    - IS course
+    - Info Sys
+    - BS-IS
+- intent: ask_blis
+  examples: |
+    - BLIS
+    - BLIS course
+    - LS
+    - BLIS
+    - Lib Sci
+    - libsci course
+    - Library Science
+    - BL-IS
+- intent: ask_digiani
+  examples: |
+    - DigiAni
+    - DigiAni course
+    - DA
+    - BSEMC DA
+    - DigiAni
+    - digiani course
+    - BSEMC Digital Animation
+    - Digi-Ani
+- intent: ask_gamedev
+  examples: |
+    - GameDev
+    - GameDev course
+    - GD
+    - BSEMC GD
+    - GameDev
+    - gamedev course
+    - BSEMC Game Development
+    - Game-Dev
+- intent: ask_bsit_careers
+  examples: |
+    - bsit careers
+    - bsit jobs
+    - IT careers
+    - IT jobs
+    - jobs for IT
+    - career path for IT
+    - career paths IT
+    - IT career
+- intent: ask_bscs_careers
+  examples: |
+    - bscs careers
+    - bscs jobs
+    - CS careers
+    - CS jobs
+    - jobs for CS
+    - career path for CS
+    - career paths CS
+    - CS career
+- intent: ask_bsis_careers
+  examples: |
+    - bsis careers
+    - bsis jobs
+    - IS careers
+    - IS jobs
+    - jobs for IS
+    - career path for IS
+    - career paths IS
+    - IS career
+- intent: ask_blis_careers
+  examples: |
+    - blis careers
+    - blis jobs
+    - Library careers
+    - Library jobs
+    - jobs for BLIS
+    - career path for BLIS
+    - career paths BLIS
+    - Library career
+- intent: ask_digiani_careers
+  examples: |
+    - digiani careers
+    - digiani jobs
+    - Animation careers
+    - Animation jobs
+    - jobs for DigiAni
+    - career path for DigiAni
+    - career paths DigiAni
+    - Animation career
+- intent: ask_gamedev_careers
+  examples: |
+    - gamedev careers
+    - gamedev jobs
+    - Game careers
+    - Game jobs
+    - jobs for gamedev
+    - career path for gamedev
+    - career paths gamedev
+    - Game career
+- intent: ask_programs_offered_cics
+  examples: |
+    - cics programs
+    - cics degrees
+    - CICS courses
+    - CiCS degree courses
+    - programs offered cics
+    - cics course options
+    - cics program options
+    - cics degrees offered
+- intent: ask_program_recommendation
+  examples: |
+    - recommended course
+    - what is best degree?
+    - I can't choose degree.
+    - help me choose a degree.
+    - degree program recommend
+    - recommend program
+    - recommend degree
+    - recommend course
+
+- intent: provide_preferences
+  examples: |
+    - i choose [A](preferences)
+    - i choose [B](preferences)
+    - i choose [C](preferences)
+    - i choose [D](preferences)
+    - i choose [E](preferences)
+    - i choose [F](preferences)
+    - [A](preferences)
+    - [B](preferences)
+    - [C](preferences)
+    - [D](preferences)
+    - [E](preferences)
+    - [F](preferences)
+- intent: ask_tuition_fee
+  examples: |
+    - How much is the tuition fee
+    - Can you tell me about the tuition fee
+    - What is the cost per unit for tuition
+    - How much does one unit of tuition cost
+    - tuition fee
+    - tuition
+    - tuiton
+    - tuition price
+- intent: inform_units
+  examples: |
+    - I'm planning on enrolling [15](number_of_units) units
+    - I want to take [12](number_of_units) units next semester
+    - Considering [20](number_of_units) units for the upcoming term
+    - [23](number_of_units) units
+    - [10](number_of_units) 
+    - [11](number_of_units) unit
+    - I need [12](number_of_units) unit
+- intent: ask_calculate_tuition
+  examples: |
+    - help calculate tuition
+    - calculate tuition
+    - caluclate tuiton
+    - calculte tuition
+    - can you calculate tuition
+- intent: ask_start_of_class
+  examples: |
+    - when class start
+    - start of class
+    - start class
+    - strat class
+    - start of classes
+    - expected start of class
