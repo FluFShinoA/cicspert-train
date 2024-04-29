@@ -1,3 +1,4 @@
+version: "2.0"
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
@@ -48,6 +49,42 @@ intents:
 entities:
 - number_of_units
 - preferences
+forms:
+  preference_form:
+    required_slots:
+      preference1:
+      - entity: preferences
+        type: from_entity
+      preference10:
+      - entity: preferences
+        type: from_entity
+      preference11:
+      - entity: preferences
+        type: from_entity
+      preference2:
+      - entity: preferences
+        type: from_entity
+      preference3:
+      - entity: preferences
+        type: from_entity
+      preference4:
+      - entity: preferences
+        type: from_entity
+      preference5:
+      - entity: preferences
+        type: from_entity
+      preference6:
+      - entity: preferences
+        type: from_entity
+      preference7:
+      - entity: preferences
+        type: from_entity
+      preference8:
+      - entity: preferences
+        type: from_entity
+      preference9:
+      - entity: preferences
+        type: from_entity
 slots:
   requested_slot:
     type: unfeaturized
@@ -55,75 +92,39 @@ slots:
   preference1:
     influence_conversation: true
     type: text
-    mappings:
-      - type: from_entity
-        entity: preferences
   preference2:
     influence_conversation: true
     type: text
-    mappings:
-      - type: from_entity
-        entity: preferences
   preference3:
     influence_conversation: true
     type: text
-    mappings:
-      - type: from_entity
-        entity: preferences
   preference4:
     influence_conversation: true
     type: text
-    mappings:
-      - type: from_entity
-        entity: preferences
   preference5:
     influence_conversation: true
     type: text
-    mappings:
-      - type: from_entity
-        entity: preferences
   preference6:
     influence_conversation: true
     type: text
-    mappings:
-      - type: from_entity
-        entity: preferences
   preference7:
     influence_conversation: true
     type: text
-    mappings:
-      - type: from_entity
-        entity: preferences
   preference8:
     influence_conversation: true
     type: text
-    mappings:
-      - type: from_entity
-        entity: preferences
   preference9:
     influence_conversation: true
     type: text
-    mappings:
-      - type: from_entity
-        entity: preferences
   preference10:
     influence_conversation: true
     type: text
-    mappings:
-      - type: from_entity
-        entity: preferences
   preference11:
     influence_conversation: true
     type: text
-    mappings:
-      - type: from_entity
-        entity: preferences
   number_of_units:
     influence_conversation: true
     type: text
-    mappings:
-      - type: from_entity
-        entity: number_of_units
 responses:
   utter_tuition_path_options:
   - buttons:
@@ -524,9 +525,41 @@ responses:
       \  - [Twitter Account](https://twitter.com/NEU_ph_official/)\n\nOr you can Visit\
       \ our official page: [NEU Official Page](https://neu.edu.ph)"
 actions:
-- action_tuition_fee
 - action_calculate_tuition_fee
-- action_entry_grade
-- action_start_of_class
-- action_reset_all_slots
-- preference_form
+- action_tuition_fee
+- utter_greet2
+- utter_no_interest
+- utter_game_programmer_info
+- utter_bsemc_gamedev_careers
+- utter_bsemc_gamedev_answer
+- utter_game_designer_info
+- utter_what_ad_builders
+- utter_DigiAni_simplified
+- utter_ask_what_is_DigiAni
+- utter_bsemc_digiani_answer
+- utter_bsemc_digiani_careers
+- utter_greet
+- utter_thanks
+- utter_goodbye
+- utter_access_neuvle
+- utter_programs_offered
+- utter_bsit_answer
+- utter_bscs_answer
+- utter_bsis_answer
+- utter_bsemc_answer
+- utter_please_rephrase
+- utter_ask_preference1
+- utter_ask_preference2
+- utter_ask_preference3
+- utter_ask_preference4
+- utter_ask_preference5
+- utter_ask_preference6
+- utter_ask_preference7
+- utter_ask_preference8
+- utter_ask_preference9
+- utter_ask_preference10
+- utter_submit
+- utter_recommend_degree
+- utter_confirm_career_assist
+- utter_confirmed_career_assist
+- validate_preference_form
