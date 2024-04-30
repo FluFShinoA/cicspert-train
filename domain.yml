@@ -1,4 +1,3 @@
-version: "2.0"
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
@@ -49,82 +48,46 @@ intents:
 entities:
 - number_of_units
 - preferences
-forms:
-  preference_form:
-    required_slots:
-      preference1:
-      - entity: preferences
-        type: from_entity
-      preference10:
-      - entity: preferences
-        type: from_entity
-      preference11:
-      - entity: preferences
-        type: from_entity
-      preference2:
-      - entity: preferences
-        type: from_entity
-      preference3:
-      - entity: preferences
-        type: from_entity
-      preference4:
-      - entity: preferences
-        type: from_entity
-      preference5:
-      - entity: preferences
-        type: from_entity
-      preference6:
-      - entity: preferences
-        type: from_entity
-      preference7:
-      - entity: preferences
-        type: from_entity
-      preference8:
-      - entity: preferences
-        type: from_entity
-      preference9:
-      - entity: preferences
-        type: from_entity
 slots:
   requested_slot:
     type: unfeaturized
     influence_conversation: false
   preference1:
-    influence_conversation: true
     type: text
+    influence_conversation: true
   preference2:
-    influence_conversation: true
     type: text
+    influence_conversation: true
   preference3:
-    influence_conversation: true
     type: text
+    influence_conversation: true
   preference4:
-    influence_conversation: true
     type: text
+    influence_conversation: true
   preference5:
-    influence_conversation: true
     type: text
+    influence_conversation: true
   preference6:
-    influence_conversation: true
     type: text
+    influence_conversation: true
   preference7:
-    influence_conversation: true
     type: text
+    influence_conversation: true
   preference8:
-    influence_conversation: true
     type: text
+    influence_conversation: true
   preference9:
-    influence_conversation: true
     type: text
+    influence_conversation: true
   preference10:
-    influence_conversation: true
     type: text
+    influence_conversation: true
   preference11:
-    influence_conversation: true
     type: text
+    influence_conversation: true
   number_of_units:
-    influence_conversation: true
     type: text
+    influence_conversation: true
 responses:
   utter_tuition_path_options:
   - buttons:
@@ -147,7 +110,7 @@ responses:
   utter_confirmed_career_assist:
   - text: Alright, I will start by asking you 11 questions to determine which degree
       program will be suitable for you based on your preferences!
-  utter_ask_preference1:
+  utter_ask_preference01:
   - buttons:
     - payload: /provide_preferences{{"preferences":"A"}}
       title: A. I would love to
@@ -161,7 +124,7 @@ responses:
       title: Skip
     text: Let us start with finding out what you like. How would you prefer working
       in the creative side of tech?
-  utter_ask_preference2:
+  utter_ask_preference02:
   - buttons:
     - payload: /provide_preferences{{"preferences":"A"}}
       title: A. I would love to
@@ -174,7 +137,7 @@ responses:
     - payload: /deny
       title: Skip
     text: How about  the traditional side of the tech industry?
-  utter_ask_preference3:
+  utter_ask_preference03:
   - buttons:
     - payload: /provide_preferences{{"preferences":"A"}}
       title: A. Web Development, Networking, Tech Support
@@ -191,7 +154,7 @@ responses:
     - payload: /deny
       title: Skip
     text: Which of the fields below would you want to study the most?
-  utter_ask_preference4:
+  utter_ask_preference04:
   - buttons:
     - payload: /provide_preferences{{"preferences":"A"}}
       title: A. Very Confident
@@ -205,7 +168,7 @@ responses:
       title: Skip
     text: Now for your skills. How confident are you with your knowledge of Internet
       technologies and hardware/software troubleshooting?
-  utter_ask_preference5:
+  utter_ask_preference05:
   - buttons:
     - payload: /provide_preferences{{"preferences":"A"}}
       title: A. Very Confident
@@ -218,7 +181,7 @@ responses:
     - payload: /deny
       title: Skip
     text: How about with using algorithms, programming languages and mathematics?
-  utter_ask_preference6:
+  utter_ask_preference06:
   - buttons:
     - payload: /provide_preferences{{"preferences":"A"}}
       title: A. Very Confident
@@ -231,7 +194,7 @@ responses:
     - payload: /deny
       title: Skip
     text: How about with business processes and team management?
-  utter_ask_preference7:
+  utter_ask_preference07:
   - buttons:
     - payload: /provide_preferences{{"preferences":"A"}}
       title: A. Very Confident
@@ -244,7 +207,7 @@ responses:
     - payload: /deny
       title: Skip
     text: How about library systems and organizing techniques?
-  utter_ask_preference8:
+  utter_ask_preference08:
   - buttons:
     - payload: /provide_preferences{{"preferences":"A"}}
       title: A. Very Confident
@@ -258,7 +221,7 @@ responses:
       title: Skip
     text: How about with using Game Engines (Unreal, Unity, Godot), and game programming
       languages (C#,C++,Java) ?
-  utter_ask_preference9:
+  utter_ask_preference09:
   - buttons:
     - payload: /provide_preferences{{"preferences":"A"}}
       title: A. Very Confident
@@ -528,38 +491,63 @@ actions:
 - action_calculate_tuition_fee
 - action_tuition_fee
 - utter_greet2
-- utter_no_interest
-- utter_game_programmer_info
-- utter_bsemc_gamedev_careers
-- utter_bsemc_gamedev_answer
-- utter_game_designer_info
-- utter_what_ad_builders
-- utter_DigiAni_simplified
-- utter_ask_what_is_DigiAni
-- utter_bsemc_digiani_answer
-- utter_bsemc_digiani_careers
 - utter_greet
 - utter_thanks
 - utter_goodbye
-- utter_access_neuvle
 - utter_programs_offered
 - utter_bsit_answer
 - utter_bscs_answer
 - utter_bsis_answer
-- utter_bsemc_answer
 - utter_please_rephrase
-- utter_ask_preference1
-- utter_ask_preference2
-- utter_ask_preference3
-- utter_ask_preference4
-- utter_ask_preference5
-- utter_ask_preference6
-- utter_ask_preference7
-- utter_ask_preference8
-- utter_ask_preference9
+- utter_ask_preference01
+- utter_ask_preference02
+- utter_ask_preference03
+- utter_ask_preference04
+- utter_ask_preference05
+- utter_ask_preference06
+- utter_ask_preference07
+- utter_ask_preference08
+- utter_ask_preference09
 - utter_ask_preference10
-- utter_submit
-- utter_recommend_degree
+- utter_ask_preference11
 - utter_confirm_career_assist
 - utter_confirmed_career_assist
-- validate_preference_form
+- action_start_of_class
+- action_reset_all_slots
+- action_entry_grade
+forms:
+  preference_form:
+    required_slots:
+      preference1:
+      - entity: preferences
+        type: from_entity
+      preference10:
+      - entity: preferences
+        type: from_entity
+      preference11:
+      - entity: preferences
+        type: from_entity
+      preference2:
+      - entity: preferences
+        type: from_entity
+      preference3:
+      - entity: preferences
+        type: from_entity
+      preference4:
+      - entity: preferences
+        type: from_entity
+      preference5:
+      - entity: preferences
+        type: from_entity
+      preference6:
+      - entity: preferences
+        type: from_entity
+      preference7:
+      - entity: preferences
+        type: from_entity
+      preference8:
+      - entity: preferences
+        type: from_entity
+      preference9:
+      - entity: preferences
+        type: from_entity
