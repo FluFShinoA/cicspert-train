@@ -52,31 +52,31 @@ slots:
   requested_slot:
     type: unfeaturized
     influence_conversation: false
-  preference1:
+  preference01:
     type: text
     influence_conversation: true
-  preference2:
+  preference02:
     type: text
     influence_conversation: true
-  preference3:
+  preference03:
     type: text
     influence_conversation: true
-  preference4:
+  preference04:
     type: text
     influence_conversation: true
-  preference5:
+  preference05:
     type: text
     influence_conversation: true
-  preference6:
+  preference06:
     type: text
     influence_conversation: true
-  preference7:
+  preference07:
     type: text
     influence_conversation: true
-  preference8:
+  preference08:
     type: text
     influence_conversation: true
-  preference9:
+  preference09:
     type: text
     influence_conversation: true
   preference10:
@@ -518,36 +518,36 @@ actions:
 forms:
   preference_form:
     required_slots:
-      preference1:
+      preference01:
+      - entity: preferences
+        type: from_entity
+      preference02:
+      - entity: preferences
+        type: from_entity
+      preference03:
+      - entity: preferences
+        type: from_entity
+      preference04:
+      - entity: preferences
+        type: from_entity
+      preference05:
+      - entity: preferences
+        type: from_entity
+      preference06:
+      - entity: preferences
+        type: from_entity
+      preference07:
+      - entity: preferences
+        type: from_entity
+      preference08:
+      - entity: preferences
+        type: from_entity
+      preference09:
       - entity: preferences
         type: from_entity
       preference10:
       - entity: preferences
         type: from_entity
       preference11:
-      - entity: preferences
-        type: from_entity
-      preference2:
-      - entity: preferences
-        type: from_entity
-      preference3:
-      - entity: preferences
-        type: from_entity
-      preference4:
-      - entity: preferences
-        type: from_entity
-      preference5:
-      - entity: preferences
-        type: from_entity
-      preference6:
-      - entity: preferences
-        type: from_entity
-      preference7:
-      - entity: preferences
-        type: from_entity
-      preference8:
-      - entity: preferences
-        type: from_entity
-      preference9:
       - entity: preferences
         type: from_entity
