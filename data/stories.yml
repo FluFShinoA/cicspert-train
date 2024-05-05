@@ -1,9 +1,5 @@
 version: "2.0"
 stories:
-- story: greet
-  steps:
-  - intent: greet
-  - action: utter_greet
 - story: Express thanks
   steps:
   - intent: thank
@@ -164,3 +160,11 @@ stories:
   - intent: ask_start_of_class
   - action: action_start_of_class
   - action: utter_greet2
+- story: newnew
+  steps:
+  - intent: goodbye
+  - action: action_hello_world
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
