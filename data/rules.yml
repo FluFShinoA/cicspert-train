@@ -24,6 +24,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_reset_all_slots
   - action: utter_greet2
 - rule: Cancel preference form
   condition:
@@ -34,3 +35,4 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: utter_greet2

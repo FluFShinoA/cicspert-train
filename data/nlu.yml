@@ -18,6 +18,7 @@ nlu:
     - cee you later
     - good night
     - bye
+    - bye bye
 - intent: thank
   examples: |
     - thanks
